@@ -1,0 +1,4 @@
+Dataset path tum_stable_seq_005_part_1_dif_1
+Update FPS: 1.6422737436984707
+Tracking FPS: 2.8244185308105116
+Mapping FPS: 0.43669566066549004
