@@ -107,15 +107,12 @@ print("第0帧和第8帧三角测量得到的三维点坐标为: ", reconstructe
 print("第0帧和第16帧三角测量得到的三维点坐标为: ", reconstructed_3d_point2)
 print("第8帧和第16帧三角测量得到的三维点坐标为: ", reconstructed_3d_point3)
 
-
-
-
 # 使用Open3D可视化三维点、相机位置和预测三维点的位置
-def visualize_points_and_cameras(reconstructed_3d_point1, reconstructed_3d_point2,reconstructed_3d_point3, camera_positions, camera_orientations):
+def visualize_points_and_cameras(reconstructed_3d_points, camera_positions, camera_orientations):
     # 创建点云对象
     point_cloud = o3d.geometry.PointCloud()
-    points = [reconstructed_3d_point1, reconstructed_3d_point2,reconstructed_3d_point3]
-    colors = [[1, 0, 0], [0, 1, 0]]  # 红色为真实三维点，绿色为重建的三维点
+    points = reconstructed_3d_points
+    colors = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]  # 不同颜色表示不同的三维点
     point_cloud.points = o3d.utility.Vector3dVector(points)
     point_cloud.colors = o3d.utility.Vector3dVector(colors)
 
@@ -135,4 +132,75 @@ camera_positions = [t1, t2, t3]
 camera_orientations = [R1, R2, R3]
 
 # 可视化
-visualize_points_and_cameras(reconstructed_3d_point1, reconstructed_3d_point2,reconstructed_3d_point3, camera_positions, camera_orientations)
+visualize_points_and_cameras([reconstructed_3d_point1, reconstructed_3d_point2, reconstructed_3d_point3], camera_positions, camera_orientations)
+
+# 绘制极线和二维点位置
+def draw_epilines(img1, img2, lines, pts1, pts2):
+    ''' img1 - 图像1
+        img2 - 图像2
+        lines - 极线
+        pts1 - 图像1中的点
+        pts2 - 图像2中的点
+    '''
+    r, c, _ = img1.shape
+    for r, pt1, pt2 in zip(lines, pts1, pts2):
+        color = tuple(np.random.randint(0, 255, 3).tolist())
+        x0, y0 = map(int, [0, -r[2]/r[1] ])
+        x1, y1 = map(int, [c, -(r[2]+r[0]*c)/r[1] ])
+        img1 = cv2.line(img1, (x0, y0), (x1, y1), color, 1)
+        img1 = cv2.circle(img1, tuple(pt1), 5, color, -1)
+        img2 = cv2.circle(img2, tuple(pt2), 5, color, -1)
+    return img1, img2
+
+# 读取图像
+img1 = np.zeros((480, 480, 3), dtype=np.uint8)
+img2 = np.zeros((480, 480, 3), dtype=np.uint8)
+
+# 计算基础矩阵
+pts1 = np.array([pt1_2d])
+pts2 = np.array([pt2_2d])
+F, mask = cv2.findFundamentalMat(pts1, pts2, cv2.FM_8POINT)
+
+# 计算极线
+lines1 = cv2.computeCorrespondEpilines(pts2.reshape(-1, 1, 2), 2, F)
+lines1 = lines1.reshape(-1, 3)
+lines2 = cv2.computeCorrespondEpilines(pts1.reshape(-1, 1, 2), 1, F)
+lines2 = lines2.reshape(-1, 3)
+
+# 绘制极线
+img1, img2 = draw_epilines(img1, img2, lines1, pts1, pts2)
+img2, img1 = draw_epilines(img2, img1, lines2, pts2, pts1)
+
+# 显示图像
+cv2.imshow('Image 1', img1)
+cv2.imshow('Image 2', img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+# # 使用Open3D可视化三维点、相机位置和预测三维点的位置
+# def visualize_points_and_cameras(reconstructed_3d_point1, reconstructed_3d_point2,reconstructed_3d_point3, camera_positions, camera_orientations):
+#     # 创建点云对象
+#     point_cloud = o3d.geometry.PointCloud()
+#     points = [reconstructed_3d_point1, reconstructed_3d_point2,reconstructed_3d_point3]
+#     colors = [[1, 0, 0], [0, 1, 0]]  # 红色为真实三维点，绿色为重建的三维点
+#     point_cloud.points = o3d.utility.Vector3dVector(points)
+#     point_cloud.colors = o3d.utility.Vector3dVector(colors)
+
+#     # 创建相机框架
+#     camera_frames = []
+#     for position, orientation in zip(camera_positions, camera_orientations):
+#         camera_frame = o3d.geometry.TriangleMesh.create_coordinate_frame(size=1.0)
+#         camera_frame.rotate(orientation, center=(0, 0, 0))
+#         camera_frame.translate(position)
+#         camera_frames.append(camera_frame)
+
+#     # 可视化
+#     o3d.visualization.draw_geometries([point_cloud] + camera_frames)
+
+# # 相机位置和朝向
+# camera_positions = [t1, t2, t3]
+# camera_orientations = [R1, R2, R3]
+
+# # 可视化
+# visualize_points_and_cameras(reconstructed_3d_point1, reconstructed_3d_point2,reconstructed_3d_point3, camera_positions, camera_orientations)
