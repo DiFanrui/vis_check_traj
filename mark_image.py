@@ -43,22 +43,25 @@ def concatenate_images(images, gap=10):
 
 # 定义点的坐标
 points = {
-    "3": [
-        [0, [170.0, 287.0]],
-        [1, [176.5126953125, 296.0967712402344]],
-        [2, [203.76791381835938, 323.6740417480469]]
+    "4": [
+        [1, [351.1518249511719,
+            300.9872741699219]],
+        [2, [426.3986511230469,
+            297.4040832519531]],
+        [3, [480.1463623046875,
+            286.654541015625]]
     ]
 }
 
 # 图像文件路径
 image_files = {
-    "0": "dataset/images/00000000.jpg",
-    "1": "dataset/images/00000040.jpg",
-    "2": "dataset/images/00000080.jpg"
+    "1": "verify_traingulation/1.png",
+    "2": "verify_traingulation/2.png",
+    "3": "verify_traingulation/3.png"
 }
 
 # 输出文件目录
-output_dir = "marked"
+output_dir = "verify_traingulation"
 
 # 在图像上标记点
 marked_images = mark_points_on_images(points, image_files, output_dir)

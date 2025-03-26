@@ -1,0 +1,287 @@
+[
+    {
+        "points_in_img1_idx": 1965,
+        "image1_point": [
+            351.1518249511719,
+            300.9872741699219
+        ],
+        "points_in_img2_idx": 1901,
+        "image2_point": [
+            426.3986511230469,
+            297.4040832519531
+        ],
+        "points_in_img3_idx": 1922,
+        "image3_point": [
+            480.1463623046875,
+            286.654541015625
+        ],
+        "distance_12": 6.0,
+        "distance_23": 10.0
+    },
+    {
+        "points_in_img1_idx": 1229,
+        "image1_point": [
+            355.9680480957031,
+            205.63201904296875
+        ],
+        "points_in_img2_idx": 1151,
+        "image2_point": [
+            432.0000305175781,
+            205.63201904296875
+        ],
+        "points_in_img3_idx": 1144,
+        "image3_point": [
+            485.56805419921875,
+            195.26402282714844
+        ],
+        "distance_12": 9.0,
+        "distance_23": 12.0
+    },
+    {
+        "points_in_img1_idx": 1574,
+        "image1_point": [
+            171.69412231445312,
+            335.92327880859375
+        ],
+        "points_in_img2_idx": 1632,
+        "image2_point": [
+            261.2736511230469,
+            318.5050354003906
+        ],
+        "points_in_img3_idx": 1687,
+        "image3_point": [
+            318.5050354003906,
+            306.0634460449219
+        ],
+        "distance_12": 9.0,
+        "distance_23": 10.0
+    },
+    {
+        "points_in_img1_idx": 1737,
+        "image1_point": [
+            170.20114135742188,
+            334.4302978515625
+        ],
+        "points_in_img2_idx": 1785,
+        "image2_point": [
+            259.7806701660156,
+            316.514404296875
+        ],
+        "points_in_img3_idx": 1801,
+        "image3_point": [
+            316.514404296875,
+            304.5704345703125
+        ],
+        "distance_12": 9.0,
+        "distance_23": 8.0
+    },
+    {
+        "points_in_img1_idx": 685,
+        "image1_point": [
+            356.4000244140625,
+            206.40000915527344
+        ],
+        "points_in_img2_idx": 671,
+        "image2_point": [
+            433.20001220703125,
+            206.40000915527344
+        ],
+        "points_in_img3_idx": 838,
+        "image3_point": [
+            485.280029296875,
+            194.40000915527344
+        ],
+        "distance_12": 11.0,
+        "distance_23": 9.0
+    },
+    {
+        "points_in_img1_idx": 1920,
+        "image1_point": [
+            297.4040832519531,
+            225.74046325683594
+        ],
+        "points_in_img2_idx": 1924,
+        "image2_point": [
+            372.6509094238281,
+            222.1572723388672
+        ],
+        "points_in_img3_idx": 1932,
+        "image3_point": [
+            419.2322692871094,
+            211.40773010253906
+        ],
+        "distance_12": 11.0,
+        "distance_23": 15.0
+    },
+    {
+        "points_in_img1_idx": 1178,
+        "image1_point": [
+            171.072021484375,
+            336.96002197265625
+        ],
+        "points_in_img2_idx": 837,
+        "image2_point": [
+            260.6400146484375,
+            318.2400207519531
+        ],
+        "points_in_img3_idx": 961,
+        "image3_point": [
+            316.8000183105469,
+            305.2799987792969
+        ],
+        "distance_12": 12.0,
+        "distance_23": 3.0
+    },
+    {
+        "points_in_img1_idx": 1203,
+        "image1_point": [
+            397.4400329589844,
+            314.49603271484375
+        ],
+        "points_in_img2_idx": 1110,
+        "image2_point": [
+            473.4720458984375,
+            314.49603271484375
+        ],
+        "points_in_img3_idx": 1215,
+        "image3_point": [
+            530.4960327148438,
+            302.4000244140625
+        ],
+        "distance_12": 13.0,
+        "distance_23": 8.0
+    },
+    {
+        "points_in_img1_idx": 1809,
+        "image1_point": [
+            122.42537689208984,
+            301.58447265625
+        ],
+        "points_in_img2_idx": 1700,
+        "image2_point": [
+            213.99557495117188,
+            283.6685485839844
+        ],
+        "points_in_img3_idx": 1548,
+        "image3_point": [
+            267.49444580078125,
+            271.6416320800781
+        ],
+        "distance_12": 13.0,
+        "distance_23": 14.0
+    },
+    {
+        "points_in_img1_idx": 21,
+        "image1_point": [
+            474.0,
+            271.0
+        ],
+        "points_in_img2_idx": 0,
+        "image2_point": [
+            548.0,
+            278.0
+        ],
+        "points_in_img3_idx": 413,
+        "image3_point": [
+            605.0,
+            267.0
+        ],
+        "distance_12": 14.0,
+        "distance_23": 13.0
+    },
+    {
+        "points_in_img1_idx": 959,
+        "image1_point": [
+            319.6800231933594,
+            321.1200256347656
+        ],
+        "points_in_img2_idx": 829,
+        "image2_point": [
+            397.44000244140625,
+            315.3600158691406
+        ],
+        "points_in_img3_idx": 910,
+        "image3_point": [
+            453.6000061035156,
+            303.84002685546875
+        ],
+        "distance_12": 14.0,
+        "distance_23": 9.0
+    },
+    {
+        "points_in_img1_idx": 1966,
+        "image1_point": [
+            326.0695495605469,
+            304.5704650878906
+        ],
+        "points_in_img2_idx": 1900,
+        "image2_point": [
+            404.8995361328125,
+            300.9872741699219
+        ],
+        "points_in_img3_idx": 1920,
+        "image3_point": [
+            458.64727783203125,
+            290.23773193359375
+        ],
+        "distance_12": 14.0,
+        "distance_23": 8.0
+    },
+    {
+        "points_in_img1_idx": 170,
+        "image1_point": [
+            357.0,
+            207.0
+        ],
+        "points_in_img2_idx": 108,
+        "image2_point": [
+            433.0,
+            207.0
+        ],
+        "points_in_img3_idx": 200,
+        "image3_point": [
+            486.0,
+            196.0
+        ],
+        "distance_12": 15.0,
+        "distance_23": 15.0
+    },
+    {
+        "points_in_img1_idx": 1211,
+        "image1_point": [
+            324.8640441894531,
+            312.7680358886719
+        ],
+        "points_in_img2_idx": 1257,
+        "image2_point": [
+            402.6240234375,
+            307.5840148925781
+        ],
+        "points_in_img3_idx": 1198,
+        "image3_point": [
+            457.9200439453125,
+            297.2160339355469
+        ],
+        "distance_12": 15.0,
+        "distance_23": 10.0
+    },
+    {
+        "points_in_img1_idx": 1850,
+        "image1_point": [
+            113.46742248535156,
+            322.4863586425781
+        ],
+        "points_in_img2_idx": 1866,
+        "image2_point": [
+            206.032958984375,
+            301.58447265625
+        ],
+        "points_in_img3_idx": 1868,
+        "image3_point": [
+            262.76666259765625,
+            286.654541015625
+        ],
+        "distance_12": 15.0,
+        "distance_23": 15.0
+    }
+]
