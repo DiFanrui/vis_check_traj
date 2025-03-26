@@ -103,9 +103,9 @@ reconstructed_3d_point2 = triangulate_points(K, R1, t1, R3, t3, pt1_2d, pt3_2d)
 reconstructed_3d_point3 = triangulate_points(K, R2, t2, R3, t3, pt2_2d, pt3_2d)
 
 # 打印三维点
-print("第0帧和第8帧三角测量得到的三维点坐标为: ", reconstructed_3d_point1)
-print("第0帧和第16帧三角测量得到的三维点坐标为: ", reconstructed_3d_point2)
-print("第8帧和第16帧三角测量得到的三维点坐标为: ", reconstructed_3d_point3)
+print("第1张和第2张三角测量得到的三维点坐标为: ", reconstructed_3d_point1)
+print("第1张和第3张三角测量得到的三维点坐标为: ", reconstructed_3d_point2)
+print("第2张和第3张三角测量得到的三维点坐标为: ", reconstructed_3d_point3)
 
 # 使用Open3D可视化三维点、相机位置和预测三维点的位置
 def visualize_points_and_cameras(reconstructed_3d_points, camera_positions, camera_orientations):
