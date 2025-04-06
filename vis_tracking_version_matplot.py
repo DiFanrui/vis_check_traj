@@ -21,13 +21,13 @@ def quaternion_to_rotation_matrix(q):
     
     return R
 
-def read_poses(file_path, sep=',', matrix_shape=None, trajectory_indices=(slice(None), slice(None), 3), orientation_indices=None):
+def read_poses(file_path, sep=None, matrix_shape=None, trajectory_indices=(slice(None), slice(None), 3), orientation_indices=None):
     """
     通用函数读取位姿数据并提取轨迹点。
     
     参数:
         file_path (str): 文件路径。
-        sep (str): 数据分隔符，默认为 ','。
+        sep (str): 数据分隔符。
         matrix_shape (tuple): 数据的形状，例如 (4, 4) 表示 4x4 矩阵。
         trajectory_indices (tuple): 提取轨迹点的索引，例如 (slice(None), slice(None), 3) 表示提取 4x4 矩阵的最后一列。
     
